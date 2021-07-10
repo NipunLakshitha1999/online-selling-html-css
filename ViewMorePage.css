@@ -1,0 +1,807 @@
+/*navigation bar style start*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#div-main-of-nav{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+}
+
+.nav {
+    height: 50px;
+    width: 98%;
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+
+}
+
+.nav > .nav-header {
+    display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: black;
+    padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+    display: none;
+}
+
+.nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 14px;
+}
+
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: black;
+
+    position: relative;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.nav > .nav-links > a:hover {
+    background-color: transparent;
+    animation: underline 5s infinite;
+    color:#273c75 ;
+    cursor:grab;
+}
+.nav-links> a::before {
+    content: '';
+    display: block;
+    bottom: 3px;
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #273c75;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s,transform 0.2s ease-out;
+}
+
+.nav-links>a:hover::before,.nav-links>a:focus::before{
+    transform-origin: left top;
+    transform: scale(1,1);
+
+}
+.nav > #nav-check {
+    display: none;
+}
+.nav-links.stroke,
+.nav-links.fill{
+    position: relative;
+}
+
+@media only screen and (max-width: 600px){
+    .nav{
+        background-color: transparent;
+        z-index:0;
+        width: 100%;
+    }
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0%;
+    }
+    .nav-links> a::before{
+        background-color: white;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+        background-color: transparent;
+    }
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid black;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 799px){
+    .nav{
+        background-color: transparent;
+        z-index:0;
+        width: 100%;
+    }
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+    }
+    .nav-links> a::before{
+        background-color: white;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+        background-color: transparent;
+    }
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid black;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+@media only screen and (min-width: 800px)and (max-width: 1025px){
+    .nav {
+        margin-left: 50%;
+    }
+}
+
+
+#main-div-of-view-more{
+    width: 100%;
+    position: relative;
+    height: auto;
+    top:8vw;
+    float: left;
+}
+
+#main-div-of-image-of-view-more{
+    width: 100%;
+    float: left;
+}
+.grid-container-of-view-more{
+    width: 100%;
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    float: left;
+}
+.grid-item-of-view-more{
+    margin-top: 10px;
+   margin-right: 10px;
+    margin-left: 5px;
+}
+
+.example-card-of-view-more{
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 2px 2px 2px 2px#bdc3c7;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
+}
+.card-body{
+    padding: 20px;
+}
+.card-body>p:nth-child(1){
+    font-family: 'Oswald', sans-serif;
+    font-weight: revert;
+    font-size: 20px;
+    color: #273c75;
+    margin-top: 2px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+.card-body>p:nth-child(2){
+    font-family: 'Oswald', sans-serif;
+    font-weight: revert;
+    font-size: 15px;
+    color: #273c75;
+    margin-top: 2px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+
+.card-body>p:nth-child(3){
+    font-family: 'Oswald', sans-serif;
+    font-weight: revert;
+    font-size: 15px;
+    color: #273c75;
+    margin-top: 2px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+.example-card-of-view-more>img{
+    width: 100%;
+    height: content-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    #main-div-of-view-more{
+        top: 13vw;
+    }
+    #main-div-of-image-of-view-more{
+        width: 100%;
+    }
+    .grid-container-of-view-more{
+        grid-template-columns: auto auto auto;
+    }
+    .grid-item-of-view-more{
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .example-card-of-view-more{
+
+    }
+    .card-body{
+        padding-top: 1px;
+    }
+    .card-body>p:nth-child(1){
+        font-size: 9px;
+        margin-top: 2px;
+        padding-left: 2px;
+        margin-bottom: 0px;
+    }
+    .card-body>p:nth-child(2){
+        font-size: 9px;
+        margin-top: 2px;
+        padding-left: 2px;
+        margin-bottom: 0px;
+    }
+
+    .card-body>p:nth-child(3){
+        font-size: 9px;
+        margin-top: 2px;
+        padding-left: 2px;
+        margin-bottom: 0px;
+    }
+    .example-card-of-view-more{
+        border-radius: 5px 5px 5px 5px;
+        background-color: white;
+    }
+
+}
+@media only screen and (max-width: 800px) and (min-width: 601px) {
+    #main-div-of-view-more{
+        top: 13vw;
+    }
+    #main-div-of-image-of-view-more{
+        width: 100%;
+    }
+    .grid-container-of-view-more{
+        grid-template-columns: auto auto auto;
+    }
+    .grid-item-of-view-more{
+        margin-top: 10px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .example-card-of-view-more{
+
+    }
+    .card-body{
+        padding-top: 1px;
+    }
+    .card-body>p:nth-child(1){
+        font-size: 9px;
+        margin-top: 2px;
+        padding-left: 2px;
+        margin-bottom: 0px;
+    }
+    .card-body>p:nth-child(2){
+        font-size: 9px;
+        margin-top: 2px;
+        padding-left: 2px;
+        margin-bottom: 0px;
+    }
+
+    .card-body>p:nth-child(3){
+        font-size: 9px;
+        margin-top: 2px;
+        padding-left: 2px;
+        margin-bottom: 0px;
+    }
+    .example-card-of-view-more{
+        border-radius: 5px 5px 5px 5px;
+        background-color: white;
+    }
+}
+
+
+
+#main-div-of-footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #2d3436;
+    float: left;
+    top: 40vw;
+}
+
+#row-div-1{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns:30% 40% 30%;
+    float: left;
+}
+#footer-div-1{
+    float: left;
+    background-color: transparent;
+}
+#footer-div-2{
+    float: left;
+    background-color: transparent;
+}
+#footer-div-3{
+    float: left;
+    background-color: transparent;
+}
+#row-div-2{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    float: left;
+}
+#p-of-address{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+}
+
+
+#sub-row-1{
+    float: left;
+    width: 100%;
+    height: 20%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#sub-row-2{
+    float: left;
+    width: 100%;
+    height: 20%;
+    background-color: transparent;
+}
+#address-name-div-1{
+    width: 100%;
+    height: 100%;
+    text-align: right;
+}
+#address-name-div-2{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+#logo-of-location{
+    width: 30px;
+    margin-top: 20px;
+}
+#locations-div-1{
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#locations-div-1>div{
+    float: left;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#locations-div-1>div>p{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+}
+#locations-div-2{
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+#locations-div-2>div{
+    float: left;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#locations-div-2>div>p{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+}
+#locations-div-3{
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#locations-div-3>div{
+    float: left;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#locations-div-3>div>p{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+}
+#div-of-logo{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+#asb-logo-in-footer{
+    width: 400px;
+    margin-left: 40px;
+}
+#sub-row-3{
+    float: left;
+    width: 100%;
+    height: 15%;
+    background-color: transparent;
+    text-align: center;
+}
+
+#sub-row-3>p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+}
+#sub-row-4{
+    float: left;
+    width: 100%;
+    height: 70%;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    margin-top: 20%;
+}
+#div-of-facebook{
+    float: left;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+}
+#div-of-facebook>img{
+    width: 50px;
+    margin-left: 60px;
+}
+#div-of-instergram{
+    float: left;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+
+}
+#div-of-instergram>img{
+    width: 50px;
+    margin-left: 60px;
+}
+
+#div-of-twiter{
+    float: left;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+}
+#div-of-twiter>img{
+    width: 50px;
+    margin-left: 60px;
+}
+#sub-row-5{
+    float: left;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#sub-row-5>p{
+    font-size: 15px;
+    margin-top: 20px;
+}
+#sub-row-6{
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+#footer-company-logo{
+    float: left;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+#footer-company-logo>img{
+    width: 50px;
+
+}
+#footer-company-name{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+#footer-company-name>p{
+    font-size: 15px;
+    max-height: 30px;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    #main-div-of-footer{
+        width: 100%;
+        height: auto;
+        top: 40vw;
+    }
+    #row-div-1{
+        width: 100%;
+        height: auto;
+        grid-template-columns:30% 40% 30%;
+    }
+    #row-div-2{
+        width: 100%;
+        height: 10vw;
+        float: left;
+    }
+    #p-of-address{
+        font-size: 12px;
+        color: white;
+        margin-top: 10px;
+    }
+    #sub-row-1{
+        width: 100%;
+        height: 20%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    #sub-row-2{
+        float: left;
+        width: 100%;
+        height: 20%;
+    }
+    #logo-of-location{
+        width: 20px;
+        margin-top: 10px;
+    }
+    #locations-div-1{
+        float: left;
+        margin-top: 10px;
+    }
+    #locations-div-1>div>p{
+        font-size: 7px;
+        margin-left: 20px;
+    }
+    #locations-div-2>div>p{
+        font-size: 7px;
+        margin-left: 20px;
+    }
+    #locations-div-3>div>p{
+        font-size: 7px;
+        margin-left: 20px;
+    }
+    #asb-logo-in-footer{
+        width: 150px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    #sub-row-3>p{
+        font-size: 12px;
+        color: white;
+        margin-top: 10px;
+    }
+
+    #div-of-facebook{
+        margin-top: 10px;
+    }
+    #div-of-facebook>img{
+        width: 15px;
+        margin-left: 15px;
+    }
+    #div-of-instergram{
+        margin-top: 10px;
+
+    }
+    #div-of-instergram>img{
+        width: 15px;
+        margin-left: 15px;
+    }
+
+    #div-of-twiter{
+        margin-top: 10px;
+    }
+    #div-of-twiter>img{
+        width: 15px;
+        margin-left: 15px;
+    }
+    #sub-row-5>p{
+        font-size: 7px;
+        margin-top: 10px;
+    }
+    #footer-company-logo>img{
+        width: 25px;
+
+    }
+    #footer-company-name>p{
+        font-size: 7px;
+        margin-top: 10px;
+    }
+
+}
+@media only screen and (max-width: 800px) and (min-width: 601px) {
+    #main-div-of-footer{
+        width: 100%;
+        height: 50vw;
+        top: 40vw;
+    }
+    #row-div-1{
+        width: 100%;
+        height: 40vw;
+        grid-template-columns:30% 40% 30%;
+    }
+    #row-div-2{
+        width: 100%;
+        height: 10vw;
+        float: left;
+    }
+    #p-of-address{
+        font-size: 17px;
+        color: white;
+        margin-top: 10px;
+    }
+    #sub-row-1{
+        width: 100%;
+        height: 20%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    #sub-row-2{
+        float: left;
+        width: 100%;
+        height: 20%;
+    }
+    #logo-of-location{
+        width: 30px;
+        margin-top: 10px;
+    }
+    #locations-div-1{
+        float: left;
+        margin-top: 10px;
+    }
+    #locations-div-1>div>p{
+        font-size: 15px;
+        margin-left: 20px;
+    }
+    #locations-div-2>div>p{
+        font-size: 15px;
+        margin-left: 20px;
+    }
+    #locations-div-3>div>p{
+        font-size: 15px;
+        margin-left: 20px;
+    }
+    #asb-logo-in-footer{
+        width: 300px;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    #sub-row-3>p{
+        font-size: 17px;
+        color: white;
+        margin-top: 10px;
+    }
+
+    #div-of-facebook{
+        margin-top: 10px;
+    }
+    #div-of-facebook>img{
+        width: 25px;
+        margin-left: 15px;
+    }
+    #div-of-instergram{
+        margin-top: 10px;
+
+    }
+    #div-of-instergram>img{
+        width: 25px;
+        margin-left: 15px;
+    }
+
+    #div-of-twiter{
+        margin-top: 10px;
+    }
+    #div-of-twiter>img{
+        width: 25px;
+        margin-left: 15px;
+    }
+    #sub-row-5>p{
+        font-size: 10px;
+        margin-top: 10px;
+    }
+    #footer-company-logo>img{
+        width: 25px;
+
+    }
+    #footer-company-name>p{
+        font-size: 10px;
+        margin-top: 10px;
+    }
+
+}
+
+/*footer css end*/
